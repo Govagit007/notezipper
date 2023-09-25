@@ -15,7 +15,7 @@ connectDB();
 app.use((req, res, next) => {
   res.setHeader(
     "Access-Control-Allow-Origin",
-    "https://fantastic-malasada-c5e5d9.netlify.app/"
+    "https://mellow-cat-df78c2.netlify.app/"
   );
   // You can also set other CORS headers here if needed
   res.setHeader("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE");
