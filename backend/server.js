@@ -10,6 +10,18 @@ const app = express();
 dotenv.config();
 connectDB();
 
+app.use((req, res, next) => {
+  res.setHeader(
+    "Access-Control-Allow-Origin",
+    "https://fantastic-malasada-c5e5d9.netlify.app/"
+  );
+  // You can also set other CORS headers here if needed
+  res.setHeader("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE");
+  res.setHeader("Access-Control-Allow-Headers", "Content-Type, Authorization");
+  res.setHeader("Access-Control-Allow-Credentials", "true");
+  next();
+});
+
 app.use(express.json());
 
 // app.get("/api/user", (req, res) => {
