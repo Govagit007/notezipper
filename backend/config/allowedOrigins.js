@@ -1,7 +1,4 @@
-const allowedOrigins = [
-  "http://localhost:3000",
-  "https://heroic-buttercream-1a9a4f.netlify.app/",
-];
+const allowedOrigins = ["https://note-zipper-client-zy67.onrender.com"];
 
 const corsOptions = {
   origin: (origin, callback) => {
