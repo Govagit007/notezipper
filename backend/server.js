@@ -7,22 +7,13 @@ const noteRoutes = require("./routes/noteRouters");
 const { notFound, errorHandler } = require("./middlewares/errorMiddleware");
 
 const cors = require("cors");
+const corsOptions = require("./config/allowedOrigins");
 
 const app = express();
 dotenv.config();
 connectDB();
 
-app.use((req, res, next) => {
-  res.setHeader(
-    "Access-Control-Allow-Origin",
-    "https://mellow-cat-df78c2.netlify.app/"
-  );
-  // You can also set other CORS headers here if needed
-  res.setHeader("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE");
-  res.setHeader("Access-Control-Allow-Headers", "Content-Type, Authorization");
-  res.setHeader("Access-Control-Allow-Credentials", "true");
-  next();
-});
+app.use(cors(corsOptions));
 
 app.use(express.json());
 
